@@ -2,7 +2,7 @@
 
 Este proyecto tiene como objetivo crear una solución integral para el **registro de asistencia mediante reconocimiento facial**, desarrollado a solicitud de **Colpryst Asesores Ltda**. Está compuesto por un backend en **Node.js (Express)**, un frontend en **React con Vite**, y una API de reconocimiento facial desarrollada en **Python**.
 
----
+
 
 ## 📁 Estructura del Proyecto
 
@@ -17,6 +17,32 @@ Este proyecto tiene como objetivo crear una solución integral para el **registr
 ---
 
 ## 🚀 Instalación y Ejecución
+
+### 🐳 Dockerización
+
+Para construir y ejecutar el proyecto completo usando Docker, utiliza los siguientes comandos desde la raíz del proyecto:
+
+1.  **Construir las imágenes y levantar los contenedores en segundo plano:**
+    ```bash
+    docker-compose up --build -d
+    ```
+
+2.  **Verificar el estado de los contenedores:**
+    ```bash
+    docker-compose ps
+    ```
+
+3.  **Ver los logs de un contenedor específico (ej. backend):**
+    ```bash
+    docker-compose logs -f backend-node
+    ```
+
+4.  **Detener y eliminar los contenedores:**
+    ```bash
+    docker-compose down
+    ```
+
+### 🛠️ Instalación Manual
 
 ### 🔧 Backend (Node.js con Express)
 
@@ -97,14 +123,14 @@ Este proyecto tiene como objetivo crear una solución integral para el **registr
     ```bash
    uvicorn main:app --reload 
    ```
----
+
 
 ## ✅ Requisitos Funcionales
 
 Los módulos clave del sistema incluyen:
 
 | Código  | Funcionalidad                   |
-|---------|----------------------------------|
+||-|
 | RF01    | Registro de usuarios            |
 | RF02    | Asignación de roles             |
 | RF03    | Inicio de sesión                |
@@ -121,7 +147,7 @@ Los módulos clave del sistema incluyen:
 
 Ver detalles en: `requisitos_funcionales.md`
 
----
+
 
 ## 🧪 Historias de Usuario Destacadas
 
@@ -133,14 +159,14 @@ Ver detalles en: `requisitos_funcionales.md`
 
 Consulta el archivo `historias_usuarios.md` para el listado completo.
 
----
+
 
 ## ⚙️ Requisitos No Funcionales
 
 Alcances técnicos y de calidad que se cumplen:
 
 | Código   | Requisito                                  |
-|----------|---------------------------------------------|
+|-||
 | RNF01    | Interfaz fácil de usar                      |
 | RNF03    | Diseño coherente                            |
 | RNF05    | Responsive design                           |
@@ -152,7 +178,7 @@ Alcances técnicos y de calidad que se cumplen:
 
 Consulta completa en: `requisitos_no_funcionales.md`
 
----
+
 
 ## 🧩 Verificación de Conexión a Base de Datos
 
@@ -163,7 +189,7 @@ Para verificar que la base de datos esté conectada correctamente:
 3. Usa herramientas como Postman o Insomnia para probar los endpoints.
 4. Verifica en consola que el backend loguee una conexión exitosa.
 
----
+
 
 ## 📬 Contacto
 
@@ -171,7 +197,7 @@ Desarrollado para: **Colpryst Asesores Ltda**
 Versión: **3.0**  
 Código interno: **PT-ERS-01**
 
----
+
 
 ## 👥 Roles Principales del Proyecto
 
@@ -205,7 +231,7 @@ Código interno: **PT-ERS-01**
   - Prototipado y validación con usuarios  
   - Implementación frontend (React Vite)  
 
----
+
 
 
 ## 👥 Autores
@@ -231,13 +257,12 @@ Código interno: **PT-ERS-01**
 
   **Rol:** Desarrollador Backend (Express), QA (Pruebas)
 
----
 
-## 📄 Licencia
 
-Este proyecto está licenciado bajo los términos de la **Licencia MIT**.  
-Puedes usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender copias del Software, siempre que incluyas el aviso de derechos de autor original.
+## 📜 Licencia
 
----
+Este proyecto está bajo la Licencia Pública General de GNU v3.0. Consulta el archivo `LICENSE` para más detalles.
+
+
 
 Copyright (c) 2025 Colpryst Asesores Ltda.

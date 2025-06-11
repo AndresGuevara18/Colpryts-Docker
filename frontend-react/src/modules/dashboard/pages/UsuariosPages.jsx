@@ -212,7 +212,7 @@ const UsuariosPage = () => {
   }, []);
 
   return (
-    <div className="ml-46 m-5 text-center font-sans">
+    <div className="ml-46 m-5 text-center font-sans min-h-screen flex flex-col">
       <h1 className="mb-4 text-3xl font-bold">Lista de Usuarios</h1>
 
       <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
@@ -259,7 +259,7 @@ const UsuariosPage = () => {
         </div>
       </div>
 
-      <div className="table-container overflow-x-auto">
+      <div className="table-container overflow-x-auto flex-grow">
         <table className="w-full bg-white shadow-lg">
           <thead>
             <tr className="bg-gray-200">
@@ -305,7 +305,7 @@ const UsuariosPage = () => {
 
       {/* Modal para mostrar detalles del usuario */}
       {modalAbierto && usuarioEncontrado && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-[500] flex items-center justify-center bg-black bg-opacity-50">
           <div className="w-full max-w-md rounded bg-white p-6 shadow-lg">
             <h2 className="mb-4 text-xl font-bold">Detalles del Usuario</h2>
             
@@ -357,7 +357,7 @@ const UsuariosPage = () => {
 
       {/* Modal para editar usuario */}
       {modalEditarAbierto && usuarioAEditar && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+        <div className="fixed inset-0 z-[500] flex items-center justify-center bg-black bg-opacity-50">
           <div className="max-h-[90vh] w-full max-w-md overflow-y-auto rounded bg-white p-6 shadow-lg">
             <h2 className="mb-4 text-xl font-bold">Editar Usuario</h2>
 

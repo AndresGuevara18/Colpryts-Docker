@@ -1,15 +1,22 @@
-FROM node:20-alpine
+FROM node:18-alpine
 
 WORKDIR /app
 
+# Copy package files
 COPY package*.json ./
-RUN npm install
 
+# Install dependencies
+RUN npm ci --only=production
+
+# Copy source code
 COPY . .
 
-COPY wait-for /wait-for
-RUN chmod +x /wait-for
-
+# Expose port
 EXPOSE 3000
 
-CMD ["/wait-for", "mysql:3306", "--", "node", "app.js"]
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD curl -f http://localhost:3000/health || exit 1
+
+# Start the application
+CMD ["npm", "start"]

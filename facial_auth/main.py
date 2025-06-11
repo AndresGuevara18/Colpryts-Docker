@@ -19,3 +19,7 @@ print("en main")
 app.include_router(reconocimiento_facial, prefix="/api")#verificar imagen registro usuario desde NODE
 app.include_router(registro_entrada, prefix="/api")#registro entrada desde react
 app.include_router(registro_salida, prefix="/api") #registro salida desde react
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
