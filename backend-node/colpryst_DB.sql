@@ -183,3 +183,14 @@ BEGIN
 END$$
 
 DELIMITER ;
+
+
+INSERT INTO horario_laboral (hora_entrada, hora_salida, descripcion)
+VALUES ('07:15:00', '16:30:00', 'Horario General');
+
+INSERT INTO cargo (nombre_cargo, descripcion, id_horario) VALUES 
+('Administrador', 'Administrador General', 1);
+
+INSERT INTO usuario (tipo_documento, numero_documento, nombre_empleado, direccion_empleado, telefono_empleado, email_empleado, eps_empleado, usuarioadmin, contrasenia, id_cargo)
+VALUES
+('DNI', '12345678A', 'Carlos Pérez', 'Calle 123, Ciudad A', '3001234567', 'carlos.perez@colpryst.com', 'EPS001', 'carlos.perez', '$2b$10$k4N.MfxMT5FaKT1WT6KHzeS7u8sZBNu/K/fDw.kW6.T4sFBQB4dPS', 1);
