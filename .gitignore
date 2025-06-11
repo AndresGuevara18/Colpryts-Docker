@@ -1,0 +1,50 @@
+# ================
+# Python
+# ================
+# Entornos virtuales
+facial_auth/venv310/
+
+# Archivos temporales de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+
+# ================
+# Node.js/React
+# ================
+# node_modules en ambas carpetas
+backend-node/node_modules/
+frontend-react/node_modules/
+
+# Archivos de entorno
+backend-node/.env
+frontend-react/.env
+
+# Configuración de editor
+backend-node/.vscode/
+frontend-react/.vscode/
+.vscode/
+
+# Archivos generados (revisar si subirlas)
+backend-node/dist/
+frontend-react/dist/
+frontend-react/build/
+
+# Logs
+backend-node/logs/
+frontend-react/logs/
+
+# Configuración específica
+
+# Vite
+frontend-react/.vite/
+
+# ================
+# Sistema
+# ================
+.DS_Store
+Thumbs.db
+node_modules/

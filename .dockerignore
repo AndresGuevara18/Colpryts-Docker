@@ -1,0 +1,11 @@
+node_modules
+npm-debug.log
+.DS_Store
+*.log
+.vscode
+.env
+.git
+backend-node/node_modules
+facial_auth/venv310
+__pycache__
+*.pyc

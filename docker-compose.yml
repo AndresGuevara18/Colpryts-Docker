@@ -1,0 +1,48 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend-node
+    container_name: backend-node
+    ports:
+      - "3000:3000"
+    #volumes:
+    #  - ./backend-node:/app
+    environment:
+      - NODE_ENV=development
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=admin123
+      - DB_NAME=colpryst_col3
+    depends_on:
+      - mysql
+    command: ["./wait-for", "mysql:3306", "--", "npm", "start"]
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin123
+      MYSQL_DATABASE: colpryst_col3
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./backend-node/colpryst_DB.sql:/docker-entrypoint-initdb.d/init.sql
+  frontend:
+    build: ./frontend-react
+    container_name: frontend-react
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+  facial_auth:
+    build: ./facial_auth
+    container_name: facial-auth
+    ports:
+      - "8000:8000"
+    restart: always
+    # environment:
+    #   - VAR=valor
+    depends_on:
+      - mysql
